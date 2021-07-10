@@ -36,3 +36,27 @@
     transform: rotate(360deg);
   }
 }
+
+.main-nav{
+  background-color: darkblue;
+  overflow: hidden;
+}
+
+.main-nav .nav-link {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.main-nav .nav-link:hover{
+  background-color: #ddd;
+  color: black;
+}
+
+.main-nav nav-ink:active {
+  background-color: #04AA6D;
+  color: white;
+}
