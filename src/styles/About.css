@@ -2,6 +2,10 @@ div{
   padding:10px;
   margin:0 auto;
 }
-#devpics{
+.pics-row{
   display: flex;
+}
+
+#s-pic{
+  margin-right: inherit;
 }

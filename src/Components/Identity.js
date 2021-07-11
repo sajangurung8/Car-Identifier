@@ -5,8 +5,8 @@ function Identity(props){
   return(
     <>
     <div>
-    <img src={props.source} width="400" height="400"/>
-    <h2>{props.name}</h2>
+    <img src={props.source} width={props.width} height={props.height}/>
+    <h3>{props.name}</h3>
     </div>
     </>
   );
