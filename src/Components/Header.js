@@ -13,9 +13,9 @@ function Header(){
   return(
     <Router>
     <div className="App">
-      <nav class="main-nav">
-        <Link class="nav-link" to= "/">Car Identifier</Link>
-        <Link class="nav-link" to="/about">About</Link>
+      <nav className="main-nav">
+        <Link className="nav-link" to= "/">Car Identifier</Link>
+        <Link className="nav-link" to="/about">About</Link>
       </nav>
       <Switch>
         <Route exact path="/">
