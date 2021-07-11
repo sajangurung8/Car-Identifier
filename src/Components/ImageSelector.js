@@ -8,7 +8,7 @@ function ImageSelector(props){
 
   return(
     <><div>
-    <img id="input-img" src={path}/>
+    <img id="input-img" src={path}  height="250" width="250" alt="."/>
     </div>
     </>
   );

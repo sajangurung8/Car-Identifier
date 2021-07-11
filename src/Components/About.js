@@ -11,11 +11,10 @@ function About(){
     <p>During thier time in MSSA, Sajan and Ean realized thier common intrest on Machine Learning and collaborated to create this Web applicaton <br/>to take image as an input, either from user's camera or a picture of a car on local drive to
     predict the year, make and model of the car.</p>
     <p>We are utiliging a pre existing dataset from Standford Univeristy which we have stored in a google cloud storage to train a model and using tensorflow.js to predict a car</p>
-    <p><strong>Following are 3 examples from the dataset with the label:</strong></p>
+
 <div class="pics-row">
     <Identity id="s-pic" source="img/sajan.jpg" name="Sajan Gurung" height="300"  width="300"/>
     <Identity id="e-pic" source="img/ean.jpg" name="Ean Pfeiffer" height="300"  width="300"/>
-
 </div>
     </>
   );

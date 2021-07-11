@@ -13,7 +13,7 @@ render(){
     <h1>Car Identifier Wep application</h1>
 
     <ImageSelector/>
-    <input id="fileElem" type="file" accept="image/*" /><br/>
+    <input id="fileLoader" type="file" accept="image/*" onChange = {viewImage}/><br/>
     <button className="button" id="predictBtn" onClick={loadModel} >Predict</button>
     <div id="preview"><h2 id="res"></h2></div>
     </>
@@ -21,6 +21,15 @@ render(){
 }
 
 }
+
+function viewImage() {
+        var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("fileLoader").files[0]);
+
+        oFReader.onload = function (oFREvent) {
+            document.getElementById("input-img").src = oFREvent.target.result;
+        };
+    };
 
 async function loadModel(){
   const model = await automl.loadImageClassification('model.json');
@@ -39,6 +48,8 @@ async function getLabel(predictions){
       result = predictions[i].label;
     }
   }
+  if(highProb<0.89)
+    result = "Could not predict, it might not be a flower.";
   return result;
 }
 

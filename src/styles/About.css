@@ -5,7 +5,3 @@ div{
 .pics-row{
   display: flex;
 }
-
-#s-pic{
-  margin-right: inherit;
-}

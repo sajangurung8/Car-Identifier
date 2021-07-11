@@ -5,7 +5,7 @@ function Identity(props){
   return(
     <>
     <div>
-    <img src={props.source} width={props.width} height={props.height}/>
+    <img src={props.source} width={props.width} height={props.height} alt="."/>
     <h3>{props.name}</h3>
     </div>
     </>
