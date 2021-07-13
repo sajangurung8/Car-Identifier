@@ -1,16 +1,14 @@
-import {React, Component} from "react";
+import {React, Component} from "react"
 import * as automl from "@tensorflow/tfjs-automl";
 import * as ts from "@tensorflow/tfjs";
 import ImageSelector from "./ImageSelector.js";
 import '../styles/App.css';
 
 class Home extends Component{
-
-
 render(){
   return(
     <>
-    <h1>Car Identifier Wep application</h1>
+    <h1>Car Identifier Web application</h1>
 
     <ImageSelector/>
     <input id="fileLoader" type="file" accept="image/*" onChange = {viewImage}/><br/>
@@ -48,8 +46,8 @@ async function getLabel(predictions){
       result = predictions[i].label;
     }
   }
-  if(highProb<0.89)
-    result = "Could not predict, it might not be a flower.";
+  if(highProb<0.85)
+    result = "Could not predict, it might not be a car.";
   return result;
 }
 

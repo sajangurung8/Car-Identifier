@@ -5,15 +5,17 @@
 
 
 .main-nav{
+  max-width: 100%;
   background-color: darkblue;
-  overflow: hidden;
+  overflow:hidden;
 }
 
 .main-nav .nav-link {
-  float: left;
+
   color: #f2f2f2;
   text-align: center;
   padding: 14px 16px;
+    float: left;
   text-decoration: none;
   font-size: 17px;
 }
@@ -23,9 +25,9 @@
   color: black;
 }
 
-.main-nav nav-ink:active {
-  background-color: #04AA6D;
-  color: white;
+img{
+  max-width: 100%;
+  height: auto;
 }
 
 #input-img{
