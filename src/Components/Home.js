@@ -38,17 +38,37 @@ async function loadModel(){
 }
 
 async function getLabel(predictions){
-  let result = "Could not predict!";
-  let highProb = predictions[0].prob;
+  var dict = {};
+  dict["first"] = predictions[0];
+  dict["second"] = predictions[0];
+  dict["third"] = predictions[0];
   for(let i = 0; i<predictions.length; i++){
-    if(predictions[i].prob >= highProb){
-      highProb =predictions[i].prob;
-      result = predictions[i].label;
+    if(predictions[i].prob >= dict["first"].prob){
+      dict["first"] = predictions[i];
+      continue;
+    }
+    if(predictions[i].prob >= dict["second"].prob){
+      dict["second"] = predictions[i];
+      continue;
+    }
+    if(predictions[i].prob >= dict["third"].prob){
+      dict["third"] = predictions[i];
+      continue;
     }
   }
-  if(highProb<0.85)
-    result = "Could not predict, it might not be a car.";
-  return result;
+  var first = dict["first"];
+  var second =dict["second"];
+  var third=dict["third"];
+  if(first.prob>0.90)
+    return first.label;
+  else if(second.prob>0.9)
+    return second.label;
+  else if(third.prob>0.9)
+    return third.label;
+  return "<p>Our model could not accurately classify this image to one of the cars in Dataset, top 3 possibilities with probability is as follows:<br>"
+        +first.prob.toFixed(2) * 100 +"% chance its " +first.label + "<br>"
+        +second.prob.toFixed(2) * 100 +"% chance its "+ second.label + "<br>"
+        +third.prob.toFixed(2) * 100 +"% chance its"+ third.label+"</p>";
 }
 
 export default Home;

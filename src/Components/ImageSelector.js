@@ -1,5 +1,5 @@
 import React from "react"
-import "../styles/About.css"
+import "../styles/App.css"
 
 function ImageSelector(props){
   let path = "img/";
