@@ -26,8 +26,12 @@
 }
 
 img{
-  max-width: 100%;
-  height: auto;
+  max-width: 300;
+  max-height: 300 ;
+}
+
+#classifier{
+  display: none;
 }
 
 #input-img{
